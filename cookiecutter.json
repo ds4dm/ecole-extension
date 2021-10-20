@@ -2,7 +2,8 @@
   "full_name": "Racko the Racoon",
   "email": "racko@racoon.earth",
   "project_name": "Awesome-Observation",
-  "project_slug": "ecole_{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "python_package_name": "ecole_{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "extension_module_name": "observation",
   "project_short_description": "Super awesome observation function for Ecole",
   "version": "0.1.0",
   "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
