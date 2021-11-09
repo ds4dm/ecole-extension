@@ -1,10 +1,19 @@
 {
   "full_name": "Racko the Racoon",
   "email": "racko@racoon.earth",
-  "project_name": "Awesome-Observation",
-  "python_package_name": "ecole_{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-  "extension_module_name": "observation",
-  "project_short_description": "Super awesome observation function for Ecole",
+  "project_name": "Ecole-Blueberry",
+  "project_short_description": "Super awesome extension for Ecole",
+  "python_package_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "python_module_name": "core",
+  "cmake_project_name": "{{ cookiecutter.project_name.replace(' ', '-') }}",
+  "cpp_namespace_name": "{{ cookiecutter.python_package_name }}",
   "version": "0.1.0",
-  "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
+  "open_source_license": [
+    "MIT license",
+    "BSD license",
+    "ISC license",
+    "Apache Software License 2.0",
+    "GNU General Public License v3",
+    "Not open source"
+  ]
 }
