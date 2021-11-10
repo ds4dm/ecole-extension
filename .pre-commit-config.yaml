@@ -12,10 +12,11 @@ repos:
       - id: check-yaml
       - id: check-added-large-files
   - repo: https://github.com/psf/black
-    rev: 21.9b0
+    rev: 21.10b0
     hooks:
       - id: black
         args: [ '--line-length', '100' ]
+        exclude: '\{\{cookiecutter.python_package_name\}\}/'
   - repo: https://github.com/asottile/blacken-docs
     rev: v1.11.0
     hooks:
