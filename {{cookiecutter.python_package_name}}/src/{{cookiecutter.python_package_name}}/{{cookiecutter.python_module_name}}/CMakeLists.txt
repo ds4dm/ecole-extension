@@ -13,10 +13,11 @@ option(CMAKE_VISIBILITY_INLINES_HIDDEN "Hidden symbol visibility for inline func
 set(CMAKE_CXX_VISIBILITY_PRESET hidden CACHE STRING "Hidden visibility of symbols in shared libraries.")
 
 find_package(Python COMPONENTS Interpreter Development NumPy REQUIRED)
+find_package(Ecole REQUIRED)
+find_package(EcoleExtensionHelper REQUIRED)
 find_package(pybind11 REQUIRED)
 find_package(xtensor REQUIRED)
 find_package(xtensor-python REQUIRED)
-find_package(Ecole REQUIRED)
 
 pybind11_add_module(
 	{{cookiecutter.python_module_name}}
