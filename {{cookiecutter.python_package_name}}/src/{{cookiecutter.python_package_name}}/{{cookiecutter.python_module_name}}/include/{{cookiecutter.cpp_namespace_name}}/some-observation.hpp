@@ -3,7 +3,6 @@
 #include <optional>
 
 #include <xtensor/xtensor.hpp>
-#include <ecole/observation/abstract.hpp>
 #include <ecole/scip/model.hpp>
 
 
@@ -17,15 +16,14 @@ struct SomeObservation {
 };
 
 
-class SomeObservationFunction : public ecole::observation::ObservationFunction<std::optional<SomeObservation>> {
+class SomeObservationFunction {
 public:
 
-	void before_reset(ecole::scip::Model& model) override;
-
-	std::optional<SomeObservation> extract(ecole::scip::Model& model, bool done) override;
+	auto before_reset(ecole::scip::Model& model) -> void;
+	auto extract(ecole::scip::Model& model, bool done) -> std::optional<SomeObservation>;
 
 private:
-	int some_data = 0;
+	double some_data = 0;
 };
 
 }

@@ -3,12 +3,12 @@
 
 namespace {{cookiecutter.cpp_namespace_name}} {
 
-void SomeObservationFunction::before_reset(ecole::scip::Model& model) {
+auto SomeObservationFunction::before_reset(ecole::scip::Model& model) -> void {
 	// Reinitialize the inner data of the observation function on new episodes.
-	this->some_data = 0;
+	this->some_data = 0.;
 }
 
-std::optional<SomeObservation> SomeObservationFunction::extract(ecole::scip::Model& model, bool done) {
+auto SomeObservationFunction::extract(ecole::scip::Model& model, bool done) -> std::optional<SomeObservation> {
 	// Return some dummy data
 	if(this->some_data++ == 0){
 		// This will be a None in Python, because why not.
