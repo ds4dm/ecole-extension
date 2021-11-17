@@ -28,6 +28,18 @@ def get_env_cmake_args() -> List[str]:
     return cmake_args
 
 
+def get_install_cmake_args() -> List[str]:
+    """Return the list of arguments for properly finding Ecole."""
+    ecole_dir = ecole.version.get_ecole_lib_path().parent / "cmake/Ecole"
+    ecole_helper_dir = ecole.version.get_ecole_lib_path().parent / "cmake/EcoleExtensionHelper"
+    scip_dir = ecole.version.get_scip_lib_path().parent / "cmake/scip"
+    return [
+        f"-DEcole_DIR={ecole_dir}",
+        f"-DEcoleExtensionHelper_DIR={ecole_helper_dir}",
+        f"-DSCIP_DIR={scip_dir}",
+    ]
+
+
 skbuild.setup(
     name="{{cookiecutter.python_package_name}}",
     author="{{cookiecutter.full_name}}",
@@ -43,7 +55,7 @@ skbuild.setup(
     # FIXME No way to pass cmake argument to scikit-build through pip (for now)
     # https://github.com/scikit-build/scikit-build/issues/479
     # So we read them from an environment variable
-    cmake_args=get_env_cmake_args(),
+    cmake_args=get_install_cmake_args() + get_env_cmake_args(),
     zip_safe=False,
     python_requires=">=3.6",
     install_requires=[f"ecole=={ecole.__version__}", "numpy"],
