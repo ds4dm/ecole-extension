@@ -1,0 +1,31 @@
+channels:
+  - conda-forge
+dependencies:
+  # C++ build tools
+  - make
+  - cmake>=3.15
+  # C++ build time dependencies
+  - cxx-compiler
+  - xtensor
+  - xsimd
+  # C++ runtime dependencies
+  - scip
+  # Build time Python dependencies
+  - python>=3.6
+  - scikit-build
+  - pybind11>=2.7
+  - numpy>=1.4
+  - xtensor-python
+  - ecole>=0.8
+
+  # General dev tools
+  - pre-commit
+  # C++ dev tools
+  - clang-tools=11
+  - ccache
+  # Python dev tools
+  - cookiecutter
+  - black
+  - pytest
+  - ipython
+  - pyscipopt >= 3.0.1  # optional
